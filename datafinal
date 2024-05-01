@@ -1,1 +1,23 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import scipy.stats as st
+import numpy as np
+
+mouse_metadata_path = "Mouse_metadata.csv"
+study_results_path = "Study_results.csv"
+
+mouse_metadata = pd.read_csv(mouse_metadata_path)
+study_results = pd.read_csv(study_results_path)
+
+combined_data = pd.merge(study_results, mouse_metadata, on="Mouse ID", how="left")
+
+combined_data.head()
+
+
+|   |   |
+|---|---|
+| A | B |
+| 1 | 4 |
+| 2 | 5 |
+| 3 | 6 |
 
